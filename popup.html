@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MindBrake</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="mb-card">
+    <div class="mb-header">
+      <div class="mb-logo">🧘</div>
+      <div class="mb-title">
+        <h1>MindBrake</h1>
+        <span class="mb-subtle">Focus assistant</span>
+      </div>
+    </div>
+
+    <div class="mb-row">
+      <div class="mb-stat">
+        <span class="mb-label">Site</span>
+        <span id="site" class="mb-value">—</span>
+      </div>
+      <div class="mb-stat">
+        <span class="mb-label">Time on site (today)</span>
+        <span id="siteTime" class="mb-value">0m 00s</span>
+      </div>
+      <div class="mb-stat">
+        <span class="mb-label">Total today</span>
+        <span id="totalTime" class="mb-value">0m 00s</span>
+      </div>
+    </div>
+
+    <div class="mb-progress">
+      <div id="bar" class="mb-progress-bar"></div>
+    </div>
+    <div class="mb-progress-caption">
+      <span id="percent">0%</span> of today’s time is on this site
+    </div>
+
+    <div class="mb-actions">
+      <button id="openDashboard" class="mb-btn">📊 View Dashboard</button>
+      <button id="resetToday" class="mb-btn mb-danger">🧹 Reset Today</button>
+    </div>
+
+    <div id="status" class="mb-status">Tracking…</div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

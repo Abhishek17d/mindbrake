@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MindBrake — Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">🧘</div>
+      <nav class="nav">
+        <a class="nav-item active" data-page="overview">Overview</a>
+        <a class="nav-item" data-page="history">History</a>
+        <a class="nav-item" data-page="goals">Goals</a>
+        <a class="nav-item" data-page="settings">Settings</a>
+      </nav>
+    </aside>
+
+    <main class="main">
+
+      <!-- OVERVIEW PAGE -->
+      <section id="page-overview" class="page active">
+        <header class="header">
+          <div class="greeting">
+            <h1>Hello, Mindful Human 👋</h1>
+            <p class="muted" id="dateText"></p>
+          </div>
+          <div class="header-actions">
+            <a class="chip" href="#" id="refreshBtn">Refresh</a>
+          </div>
+        </header>
+
+        <section class="grid grid-4">
+          <div class="card metric">
+            <div class="metric-top">
+              <span class="metric-title">Total time today</span>
+              <span class="metric-pill good">+ live</span>
+            </div>
+            <div class="metric-value" id="totalTime">0m 00s</div>
+            <div class="metric-sub">While Chrome was focused</div>
+          </div>
+
+          <div class="card metric">
+            <div class="metric-top">
+              <span class="metric-title">Most visited site</span>
+              <span class="metric-pill" id="topShare">0%</span>
+            </div>
+            <div class="metric-value" id="topSite">—</div>
+            <div class="metric-sub" id="topTime">0m 00s</div>
+          </div>
+
+          <div class="card metric">
+            <div class="metric-top">
+              <span class="metric-title">Sites tracked</span>
+            </div>
+            <div class="metric-value" id="siteCount">0</div>
+            <div class="metric-sub">Domains with ≥ 5s today</div>
+          </div>
+
+          <div class="card metric">
+            <div class="metric-top">
+              <span class="metric-title">Focus ratio</span>
+            </div>
+            <div class="metric-value" id="focusRatio">—</div>
+            <div class="metric-sub">Categorization coming soon</div>
+          </div>
+        </section>
+
+        <section class="grid grid-2">
+          <div class="card chart">
+            <div class="card-head">
+              <h3>Time by site (top 7)</h3>
+            </div>
+            <canvas id="barChart" width="900" height="380"></canvas>
+          </div>
+
+          <div class="card chart">
+            <div class="card-head">
+              <h3>Distribution</h3>
+            </div>
+            <div class="chart-row">
+              <canvas id="pieChart" width="340" height="340"></canvas>
+              <div class="legend" id="legend"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="card-head">
+            <h3>All sites (today)</h3>
+            <span class="muted" id="tableMeta">0 entries</span>
+          </div>
+          <div class="table-wrap">
+            <table class="table" id="sitesTable">
+              <thead>
+                <tr>
+                  <th>Site</th>
+                  <th class="num">Time</th>
+                  <th class="num">Share</th>
+                </tr>
+              </thead>
+              <tbody id="sitesTbody"></tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+
+      <!-- HISTORY PAGE -->
+      <section id="page-history" class="page">
+        <header class="header">
+          <div class="greeting">
+            <h1>History 📅</h1>
+            <p class="muted">Your last 7 days of focus</p>
+          </div>
+        </header>
+
+        <section class="card">
+          <div class="card-head">
+            <h3>Past days</h3>
+          </div>
+          <ul class="db-history" id="historyList"></ul>
+        </section>
+      </section>
+
+      <!-- GOALS PAGE (placeholder) -->
+      <section id="page-goals" class="page">
+        <header class="header">
+          <h1>Goals 🎯</h1>
+        </header>
+        <p class="muted">Coming soon...</p>
+      </section>
+
+      <!-- SETTINGS PAGE (placeholder) -->
+      <section id="page-settings" class="page">
+        <header class="header">
+          <h1>Settings ⚙️</h1>
+        </header>
+        <p class="muted">Coming soon...</p>
+      </section>
+
+      <footer class="footer">
+        <span class="muted">MindBrake • private, on-device tracking</span>
+      </footer>
+    </main>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
